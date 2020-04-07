@@ -22,8 +22,8 @@ func main() {
 		EventType:    "Codefresh",
 		ProjectName:  "Knapsack Pro Demo",
 		PipelineName: "knapsack-pro-demo",
-		BuildId:      "1214416",
-		BuildMessage: "This is just a test3",
+		BuildId:      "1214417",
+		BuildMessage: "This is just a test4",
 	}
 	jsonValue, err := json.Marshal(jsonPayload)
 	if err != nil {
