@@ -81,14 +81,13 @@ func sendToNewRelicInsights(c *cli.Context) {
 	g.Write(jsonValue)
 	g.Close()
 
-	// request, _ := http.NewRequest("POST", extendedUrl, bytes.NewBuffer(jsonValue))
 	request, _ := http.NewRequest("POST", extendedUrl, &byteBuffer)
 	request.Header.Set("Content-Type", "application/json")
 	request.Header.Set("Content-Encoding", "gzip")
 	request.Header.Set("X-Insert-Key", insertKey)
 	client := &http.Client{}
 	response, err := client.Do(request)
-	// response, err = http.Post("https://httpbin.org/post", "application/json", bytes.NewBuffer(jsonValue))
+
 	if err != nil {
 		fmt.Printf("The Http request failed with error %s\n", err)
 	} else {
